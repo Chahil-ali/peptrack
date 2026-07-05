@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PepTrack — Terms & Privacy</title>
+<style>
+  :root {
+    --bg: #0F0F17;
+    --card: #16161F;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-top: rgba(255, 255, 255, 0.16);
+    --text: #F5F6FA;
+    --muted: #A0A9BC;
+    --faint: #6E7789;
+    --blue: #2D94D6;
+    --purple: #815EE0;
+    --accent: #0982FF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background:
+      radial-gradient(900px 420px at 80% -10%, rgba(129, 94, 224, 0.16), transparent 60%),
+      radial-gradient(900px 420px at 10% -10%, rgba(45, 148, 214, 0.14), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+
+  /* Header */
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .logo {
+    width: 52px; height: 52px; border-radius: 16px;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(129, 94, 224, 0.35);
+  }
+  .logo svg { width: 28px; height: 28px; }
+  h1 {
+    font-size: 34px; font-weight: 800; letter-spacing: -0.5px;
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: var(--purple);
+  }
+  .tagline { color: var(--muted); margin-top: 10px; font-size: 16px; }
+
+  /* Tabs */
+  .tabs {
+    display: flex; gap: 8px; margin: 34px 0 26px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px; padding: 5px; width: max-content; max-width: 100%;
+  }
+  .tab {
+    border: 0; cursor: pointer; border-radius: 999px;
+    padding: 12px 26px; font-size: 15px; font-weight: 700;
+    background: transparent; color: var(--muted);
+    font-family: inherit; transition: all 180ms ease;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active {
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+    color: #fff;
+  }
+  .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Document cards */
+  .doc { display: none; }
+  .doc.active { display: block; animation: rise 320ms ease; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top-color: var(--border-top);
+    border-radius: 24px;
+    padding: 38px 36px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  }
+  .doc-title { font-size: 26px; font-weight: 800; letter-spacing: -0.4px; }
+  .effective {
+    display: inline-block; margin-top: 12px; margin-bottom: 6px;
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    background: rgba(9, 130, 255, 0.12);
+    border-radius: 999px; padding: 6px 14px;
+  }
+  .lead { color: var(--muted); margin-top: 14px; }
+
+  h2 {
+    font-size: 18px; font-weight: 750; margin-top: 34px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .num {
+    flex: none; width: 26px; height: 26px; border-radius: 8px; font-size: 13px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--blue), var(--purple)); color: #fff;
+  }
+  p, li { color: var(--muted); font-size: 15.5px; }
+  p + p { margin-top: 10px; }
+  ul { margin: 10px 0 0 20px; }
+  li { margin-bottom: 7px; }
+  strong { color: var(--text); font-weight: 650; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .callout {
+    margin-top: 14px;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, 0.09);
+    border-radius: 16px; padding: 16px 18px;
+  }
+  .callout p { color: #EAB308; }
+  .callout strong { color: #F59E0B; }
+
+  .pill-note {
+    margin-top: 14px;
+    border: 1px solid rgba(9, 130, 255, 0.3);
+    background: rgba(9, 130, 255, 0.08);
+    border-radius: 16px; padding: 16px 18px;
+  }
+  .pill-note p { color: #7CB8F5; }
+  .pill-note strong { color: #A5CDF8; }
+
+  footer { text-align: center; margin-top: 44px; color: var(--faint); font-size: 13px; line-height: 1.9; }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 520px) {
+    .wrap { padding-top: 40px; }
+    .card { padding: 28px 20px; border-radius: 20px; }
+    h1 { font-size: 28px; }
+    .tab { padding: 11px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 3h8M10 3v4.2c0 .5-.15 1-.42 1.4L5.7 14.5A4 4 0 0 0 9 21h6a4 4 0 0 0 3.3-6.5l-3.88-5.9A2.5 2.5 0 0 1 14 7.2V3"/>
+        <path d="M7.5 15h9"/>
+      </svg>
+    </div>
+    <h1>PepTrack</h1>
+  </div>
+  <p class="tagline">Legal — how PepTrack works, what it is for, and how your data is handled.</p>
+
+  <nav class="tabs" role="tablist" aria-label="Documents">
+    <button class="tab active" id="tab-terms" role="tab" aria-selected="true" onclick="show('terms')">Terms of Service</button>
+    <button class="tab" id="tab-privacy" role="tab" aria-selected="false" onclick="show('privacy')">Privacy Policy</button>
+  </nav>
+
+  <!-- ======================= TERMS ======================= -->
+  <section class="doc active" id="doc-terms" role="tabpanel">
+    <div class="card">
+      <div class="doc-title">Terms of Service</div>
+      <span class="effective">Effective July 5, 2026</span>
+      <p class="lead">By downloading or using the PepTrack mobile application (the “App”), you agree to these Terms of Service. If you do not agree, do not use the App.</p>
+
+      <h2><span class="num">1</span>What PepTrack is — and is not</h2>
+      <p>PepTrack is a <strong>personal tracking and educational tool</strong> for logging peptide use, nutrition, hydration, sleep, weight and training.</p>
+      <div class="callout">
+        <p><strong>PepTrack is NOT medical advice.</strong> The App does not provide medical advice, diagnosis, treatment, or dosing instructions. Nothing in the App — including calculators, reminders, goals, estimates or educational content — is a recommendation to use any substance or follow any regimen. Always consult a licensed healthcare professional.</p>
+      </div>
+
+      <h2><span class="num">2</span>Your responsibility</h2>
+      <ul>
+        <li>You are solely responsible for decisions you make based on information you enter into or read in the App.</li>
+        <li>You are responsible for complying with the laws that apply to you. The legality of specific peptides varies by country and context.</li>
+        <li>The dose calculator and nutrition calculator only perform math on the numbers <strong>you</strong> enter. Verify every result with a qualified professional before acting on it.</li>
+        <li>The App is intended for <strong>adults (18+)</strong>.</li>
+      </ul>
+
+      <h2><span class="num">3</span>Your data</h2>
+      <p>All data you enter is stored <strong>locally on your device</strong>. PepTrack has no accounts and no server; we cannot see, access, or recover your data. Deleting the App (or using “Delete Account” inside the App) permanently erases it. See the <a href="#" onclick="show('privacy');return false;">Privacy Policy</a> for details.</p>
+
+      <h2><span class="num">4</span>Optional third-party services</h2>
+      <ul>
+        <li><strong>Meal Scan</strong> sends a photo of your meal directly from your device to the AI provider you choose (e.g. Anthropic), using an API key <strong>you</strong> provide. Your use of that provider is governed by their terms, and usage is billed to your own account with them.</li>
+        <li><strong>Apple Health</strong> integration reads only the health metrics you grant permission for, using iOS’s permission system. You can revoke access at any time in the Health app.</li>
+      </ul>
+
+      <h2><span class="num">5</span>No warranty</h2>
+      <p>The App is provided <strong>“as is” and “as available”</strong>, without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy, or availability. Estimates (calories, macros, compound levels, projections) are approximations and may be wrong.</p>
+
+      <h2><span class="num">6</span>Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, the developer of PepTrack shall not be liable for any indirect, incidental, special, consequential or exemplary damages — including personal injury, health outcomes, or data loss — arising from your use of the App.</p>
+
+      <h2><span class="num">7</span>Changes</h2>
+      <p>We may update these Terms from time to time. The current version is always available at this page. Continued use of the App after changes means you accept the updated Terms.</p>
+
+      <h2><span class="num">8</span>Contact</h2>
+      <p>Questions about these Terms: <a href="mailto:alichahil047@gmail.com">alichahil047@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ======================= PRIVACY ======================= -->
+  <section class="doc" id="doc-privacy" role="tabpanel">
+    <div class="card">
+      <div class="doc-title">Privacy Policy</div>
+      <span class="effective">Effective July 5, 2026</span>
+      <p class="lead">PepTrack is built to be private by default. The short version: <strong>your data stays on your phone.</strong></p>
+
+      <h2><span class="num">1</span>What we collect</h2>
+      <div class="pill-note">
+        <p><strong>Nothing.</strong> PepTrack has no accounts, no sign-up, no analytics, no tracking SDKs, and no server. We do not collect, transmit, sell, or share your personal data.</p>
+      </div>
+
+      <h2><span class="num">2</span>What stays on your device</h2>
+      <p>Everything you enter is stored locally on your phone, including:</p>
+      <ul>
+        <li>Doses, compounds, schedules and injection sites</li>
+        <li>Body profile (age, gender, height, weight, goal weight, photo, name)</li>
+        <li>Nutrition, meals, hydration, sleep and workout logs</li>
+        <li>Side-effect notes and progress photos</li>
+        <li>Settings and preferences</li>
+      </ul>
+      <p>We have no way to see or recover this data. If you delete the app or use <strong>Profile → Delete Account</strong>, it is gone permanently.</p>
+
+      <h2><span class="num">3</span>Optional features that leave your device</h2>
+      <p>These only activate if you turn them on, and only send what is described:</p>
+      <ul>
+        <li><strong>Meal Scan</strong>: sends the meal photo you pick directly to the AI provider <strong>you</strong> configure (e.g. Anthropic), using <strong>your own API key</strong>. The photo and response pass only between your phone and that provider, under their privacy policy. Your key is stored only on your device.</li>
+        <li><strong>Apple Health</strong>: with your permission, the app <strong>reads</strong> steps, calories, sleep, weight and workouts to fill in your logs. Nothing is written back or sent anywhere. Manage permissions in the Health app.</li>
+        <li><strong>Support email</strong>: when you tap “Report a Problem” or “Contact Support”, your mail app opens with a draft that includes the app version, an anonymous install ID (random, generated on your phone, linked to nothing) and your device model. You see the full email before deciding to send it.</li>
+        <li><strong>Export Report</strong>: generates a PDF on your device that you may choose to share. Sharing is entirely under your control.</li>
+      </ul>
+
+      <h2><span class="num">4</span>Notifications</h2>
+      <p>Reminders are <strong>local notifications</strong>, scheduled and delivered entirely on your device. No push server is involved.</p>
+
+      <h2><span class="num">5</span>Children</h2>
+      <p>PepTrack is intended for adults (18+) and is not directed at children.</p>
+
+      <h2><span class="num">6</span>Changes</h2>
+      <p>If this policy changes, the current version will always be available at this page, and the effective date above will be updated.</p>
+
+      <h2><span class="num">7</span>Contact</h2>
+      <p>Privacy questions: <a href="mailto:alichahil047@gmail.com">alichahil047@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    PepTrack — personal peptide, nutrition &amp; training tracking.<br>
+    For education and personal tracking only. Not medical advice.<br>
+    <a href="mailto:alichahil047@gmail.com">alichahil047@gmail.com</a>
+  </footer>
+</div>
+
+<script>
+  function show(which) {
+    for (const k of ['terms', 'privacy']) {
+      document.getElementById('doc-' + k).classList.toggle('active', k === which);
+      const tab = document.getElementById('tab-' + k);
+      tab.classList.toggle('active', k === which);
+      tab.setAttribute('aria-selected', k === which ? 'true' : 'false');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  // Deep links: #privacy / #terms
+  if (location.hash === '#privacy') show('privacy');
+</script>
+</body>
+</html>
