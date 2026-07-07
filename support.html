@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PepTra AI — Support</title>
+<meta name="description" content="PepTra AI support — get help, manage your subscription, delete your data, and answers to common questions.">
+<meta name="theme-color" content="#0F0F17">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PepTra AI">
+<meta property="og:title" content="PepTra AI — Support">
+<meta property="og:description" content="Get help with PepTra AI — subscriptions, data, and common questions.">
+<meta property="og:url" content="https://chahil-ali.github.io/peptrack/support.html">
+<meta property="og:image" content="https://chahil-ali.github.io/peptrack/icon.png">
+<link rel="canonical" href="https://chahil-ali.github.io/peptrack/support.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F0F17;
+    --card: #16161F;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-top: rgba(255, 255, 255, 0.18);
+    --text: #F5F6FA;
+    --muted: #A0A9BC;
+    --faint: #7C8598;
+    --blue: #2D94D6;
+    --purple: #815EE0;
+    --accent: #0982FF;
+    --display: "Space Grotesk", -apple-system, "Segoe UI", sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  ::selection { background: rgba(129, 94, 224, 0.45); color: #fff; }
+  body { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.65; min-height: 100vh; overflow-x: hidden; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .glow { position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(840px 500px at 84% -10%, rgba(129, 94, 224, 0.22), transparent 62%),
+      radial-gradient(840px 500px at 10% -8%, rgba(45, 148, 214, 0.18), transparent 62%),
+      radial-gradient(1000px 520px at 50% 118%, rgba(45, 148, 214, 0.10), transparent 60%); }
+  .scene { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+  .layer { position: absolute; inset: 0; will-change: transform; }
+  .cap { position: absolute; border-radius: 999px; background: linear-gradient(135deg, #6db7ee, #2e7fd6);
+    box-shadow: inset 0 6px 14px rgba(255,255,255,0.45), inset 0 -10px 22px rgba(10,40,90,0.35), 0 24px 60px rgba(16,60,120,0.35);
+    animation: drift 14s ease-in-out infinite alternate; }
+  .cap::after { content: ""; position: absolute; left: 12%; top: 14%; width: 55%; height: 22%; border-radius: 999px; background: rgba(255,255,255,0.55); filter: blur(1px); }
+  .cap.white { background: linear-gradient(135deg, #ffffff, #cdd9e8); box-shadow: inset 0 6px 14px rgba(255,255,255,0.8), inset 0 -10px 22px rgba(90,110,140,0.25), 0 24px 60px rgba(0,0,0,0.35); }
+  .sphere { position: absolute; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #9fd0f6, #2f7fd8 70%); animation: drift 11s ease-in-out infinite alternate; }
+  @keyframes drift { from { transform: translateY(-12px) rotate(var(--r, -28deg)); } to { transform: translateY(14px) rotate(calc(var(--r, -28deg) + 6deg)); } }
+  @media (prefers-reduced-motion: reduce) { .cap, .sphere, .appicon, .icon-stage::after { animation: none !important; } }
+
+  .wrap { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 64px 24px 48px; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+
+  .hero { text-align: center; }
+  .icon-stage { position: relative; width: 108px; margin: 0 auto; }
+  .appicon { display: block; width: 108px; height: 108px; border-radius: 26px; border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 34px 80px rgba(0,0,0,0.65), 0 10px 30px rgba(45,148,214,0.22); animation: float 7s ease-in-out infinite; }
+  .icon-stage::after { content: ""; position: absolute; left: 50%; bottom: -26px; transform: translateX(-50%); width: 100px; height: 22px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(94, 120, 224, 0.35), transparent 75%); animation: shadowpulse 7s ease-in-out infinite; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes shadowpulse { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; } 50% { transform: translateX(-50%) scale(0.82); opacity: 0.7; } }
+
+  .eyebrow { margin-top: 40px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--faint); text-transform: uppercase; }
+  h1 { margin-top: 10px; font-family: var(--display); font-size: clamp(38px, 6.5vw, 54px); font-weight: 700; letter-spacing: -1.4px; line-height: 1.05;
+    background: linear-gradient(92deg, #EAF4FF 15%, var(--blue) 52%, var(--purple) 88%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--purple); }
+  .tagline { color: var(--muted); margin: 18px auto 0; font-size: 17.5px; max-width: 540px; }
+  .tagline b { color: var(--text); font-weight: 650; }
+
+  /* contact card */
+  .contact { margin-top: 44px; background: var(--card); border: 1px solid var(--border); border-top-color: var(--border-top); border-radius: 26px;
+    padding: 32px 28px; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
+  .contact h2 { font-family: var(--display); font-size: 22px; letter-spacing: -0.3px; }
+  .contact p { color: var(--muted); font-size: 15.5px; margin-top: 8px; }
+  .mailbtn { display: inline-flex; align-items: center; gap: 9px; margin-top: 20px; padding: 13px 24px; border-radius: 999px; font-weight: 700; font-size: 15px; color: #fff; text-decoration: none;
+    background: linear-gradient(135deg, var(--blue), var(--purple)); box-shadow: 0 12px 30px rgba(94, 90, 219, 0.35); transition: transform 180ms ease, box-shadow 180ms ease; }
+  .mailbtn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(94, 90, 219, 0.5); }
+  .mailbtn svg { width: 17px; height: 17px; }
+  .response { margin-top: 14px; font-size: 13px; color: var(--faint); }
+
+  /* FAQ */
+  .faq-title { font-family: var(--display); font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin: 56px 0 20px; text-align: center; }
+  .faq { display: grid; gap: 14px; }
+  .qa { background: var(--card); border: 1px solid var(--border); border-top-color: var(--border-top); border-radius: 20px; padding: 22px 24px; }
+  .qa h3 { font-size: 16.5px; font-weight: 700; color: var(--text); }
+  .qa p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+  .qa a { color: #9D7FF2; text-decoration: none; }
+  .qa a:hover { text-decoration: underline; }
+
+  .backlinks { text-align: center; margin-top: 40px; font-size: 14.5px; }
+  .backlinks a { color: var(--muted); text-decoration: none; padding: 8px 12px; }
+  .backlinks a:hover { text-decoration: underline; color: var(--text); }
+
+  footer { text-align: center; margin-top: auto; padding-top: 56px; color: var(--faint); font-size: 13px; line-height: 2; position: relative; z-index: 1; }
+  footer img { width: 26px; height: 26px; border-radius: 7px; opacity: 0.85; margin-bottom: 8px; }
+  footer a { color: var(--muted); text-decoration: none; display: inline-block; padding: 8px 10px; margin: -4px -6px; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 520px) {
+    .cap.side { width: 120px !important; height: 50px !important; left: -64px !important; top: 7% !important; opacity: .7; }
+    .contact, .qa { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div class="scene" aria-hidden="true">
+  <div class="layer" data-depth="14">
+    <div class="cap side" style="--r:-32deg; width: 190px; height: 78px; left: -46px; top: 15%;"></div>
+    <div class="cap mid" style="--r:-24deg; width: 150px; height: 62px; right: -34px; bottom: 19%; opacity: .85; animation-delay: -2s;"></div>
+  </div>
+  <div class="layer" data-depth="30">
+    <div class="cap white" style="--r:-20deg; width: 120px; height: 52px; right: 6%; top: 8%; animation-delay: -4s;"></div>
+  </div>
+  <div class="layer" data-depth="52">
+    <div class="sphere" style="width: 16px; height: 16px; left: 21%; top: 24%;"></div>
+    <div class="sphere" style="width: 10px; height: 10px; right: 24%; top: 32%; animation-delay: -3s;"></div>
+    <div class="sphere" style="width: 13px; height: 13px; right: 13%; bottom: 28%; animation-delay: -6s;"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="icon-stage">
+      <img class="appicon" src="icon.png" alt="PepTra AI app icon" width="108" height="108">
+    </div>
+    <p class="eyebrow">Support</p>
+    <h1>How can we help?</h1>
+    <p class="tagline">Questions, feedback, or a problem to report — we read every message. <b>Most emails get a reply within 1–2 business days.</b></p>
+  </section>
+
+  <div class="contact">
+    <h2>Email support</h2>
+    <p>The fastest way to reach us. If you write from the app (Profile → Contact / Send feedback), your app version and user ID are attached automatically so we can help faster.</p>
+    <a class="mailbtn" href="mailto:alichahil047@gmail.com?subject=PepTra%20AI%20Support">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      alichahil047@gmail.com
+    </a>
+    <p class="response">PepTra AI — for education and personal tracking only. Not medical advice.</p>
+  </div>
+
+  <p class="faq-title">Common questions</p>
+  <div class="faq">
+    <div class="qa">
+      <h3>How do I manage or cancel my subscription?</h3>
+      <p>PepTra Pro is billed through your Apple ID. On your iPhone, open <b>Settings → [your name] → Subscriptions</b> (or App Store → your profile → Subscriptions), select PepTra AI, and change or cancel. Cancel at least 24 hours before the renewal date to avoid the next charge.</p>
+    </div>
+    <div class="qa">
+      <h3>How do I restore a purchase on a new device?</h3>
+      <p>Sign in with the same Apple ID, open the subscription screen, and tap <b>Restore Purchases</b>. Your access is tied to your account and follows you across devices.</p>
+    </div>
+    <div class="qa">
+      <h3>How do I delete my data or my account?</h3>
+      <p>In the app, go to <b>Profile → Privacy / Account</b>. You can erase all your data, or delete your account entirely — both remove your data from our servers. This can't be undone.</p>
+    </div>
+    <div class="qa">
+      <h3>Does Meal Scan need my own API key?</h3>
+      <p>Yes. Meal Scan is <b>bring-your-own-key</b>: you add your own AI provider key in the app, and meal photos go straight from your phone to the provider you choose — never through our servers. The rest of the app works without it.</p>
+    </div>
+    <div class="qa">
+      <h3>Is PepTra AI medical advice?</h3>
+      <p>No. PepTra AI is an education and personal-tracking tool only. It is not medical advice, diagnosis, treatment, or dosing instruction, and it does not sell or supply any substance. Always consult a licensed healthcare professional before using any peptide.</p>
+    </div>
+  </div>
+
+  <p class="backlinks">
+    <a href="terms.html">Terms of Service</a> ·
+    <a href="privacy.html">Privacy Policy</a> ·
+    <a href="index.html">Home</a>
+  </p>
+
+  <footer>
+    <img src="icon.png" alt="" aria-hidden="true"><br>
+    PepTra AI<br>
+    <a href="mailto:alichahil047@gmail.com">alichahil047@gmail.com</a>
+  </footer>
+</div>
+
+<script>
+  if (matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const layers = document.querySelectorAll('.layer');
+    addEventListener('pointermove', (e) => {
+      const dx = e.clientX / innerWidth - 0.5;
+      const dy = e.clientY / innerHeight - 0.5;
+      for (const l of layers) {
+        const d = Number(l.dataset.depth) || 20;
+        l.style.transform = `translate(${(-dx * d).toFixed(1)}px, ${(-dy * d).toFixed(1)}px)`;
+      }
+    }, { passive: true });
+  }
+</script>
+</body>
+</html>
